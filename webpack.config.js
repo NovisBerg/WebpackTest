@@ -12,5 +12,16 @@ module.exports = { // __dirname是node.js中的一个全局变量，它指向当
         historyApiFallback: true, // 不跳转
         inline: true, // 实时刷新
         port: 8097 // 设置监听端口，若省略则默认为8080
+    },
+    module: {
+        rules: [
+            {
+                test: /(\.jsx|\.js)$/,
+                use: {
+                    loader: 'babel-loader'
+                },
+                exclude: /node_modules/
+            }
+        ]
     }
 }
