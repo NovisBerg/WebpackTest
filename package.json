@@ -1,0 +1,13 @@
+{
+  "name": "WebpackTest",
+  "version": "1.0.0",
+  "description": "本项目是Webpack的入门项目，旨在学习并掌握Webpack使用方法。\r # Webpack的安装\r Webpack可以使用npm进行安装，新建一个空的文件夹WebpackTest，在终端中运行如下命令：\r ```shell script\r # 全局安装\r npm install -g webpack\r # 安装到你的项目目录\r npm install --save-dev webpack\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
