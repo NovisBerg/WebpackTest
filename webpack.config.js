@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = { // __dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录
     devtool: 'eval-source-map',
 
@@ -18,10 +20,30 @@ module.exports = { // __dirname是node.js中的一个全局变量，它指向当
             {
                 test: /(\.jsx|\.js)$/,
                 use: {
-                    loader: 'babel-loader'
+                    loader: "babel-loader"
                 },
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    }, {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                localIdentName: '[name]__[local]--[hash:base64:5]' // 新版本的css-loader中localIdentName包含在modules内，而非于其平级
+                            }
+                        }
+                    }, {
+                        loader: 'postcss-loader'
+                    }
+                ]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.BannerPlugin('版权所有，翻版必究')
+    ]
 }
