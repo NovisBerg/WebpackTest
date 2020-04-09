@@ -1,3 +1,14 @@
 {
-  "presets": ["react", "env"]
+  "presets": ["react", "env"],
+  "env": {
+    "development": {
+      "plugin": [["react-transform", {
+        "transform": [{
+          "transform": "react-transform-hmr",
+          "import": ["react"],
+          "locals": ["module"]
+        }]
+      }]]
+    }
+  }
 }
